@@ -4,32 +4,32 @@ This lab involves fundamental tasks in PHP programming, focusing on creating fun
 
 ## **Lab Questions:**
 
-### Write a PHP program to create variable with different datatypes
+### 1. Write a PHP program to create variable with different datatypes
 
 - Print all the data using `echo` and `print`.
 - Display the content of an array using `print_r` and `var_dump`.
 - Display the result of checking data types using `gettype()`.
 
-### Calculate area of circle taking radius input and defining value of PI as constant value.
+### 2. Calculate area of circle taking radius input and defining value of PI as constant value.
 
-### Write a function that takes an integer minutes and converts it to seconds.
+### 3. Write a function that takes an integer minutes and converts it to seconds.
 
-### Create a function that takes two numbers as arguments and returns their sum.
+### 4. Create a function that takes two numbers as arguments and returns their sum.
 
-### Write a function that takes the base and height of a triangle and return its area.
+### 5. Write a function that takes the base and height of a triangle and return its area.
 
-### Create a function that takes the age in years and returns the age in days.
+### 6. Create a function that takes the age in years and returns the age in days.
 
-### Create a function that takes voltage and current and returns the calculated power.
+### 7. Create a function that takes voltage and current and returns the calculated power.
 
-### A farmer is asking you to tell him how many legs can be counted among all his animals. Write PHP program to calculate total number of legs of all the animals asking input from user using form.
+### 8. A farmer is asking you to tell him how many legs can be counted among all his animals. Write PHP program to calculate total number of legs of all the animals asking input from user using form.
 
 - The farmer breeds three species:
   - chickens = 2 legs
   - cows = 4 legs
   - pigs = 4 legs
 
-### Create a function that takes the number of wins, draws and losses and calculates the number of points a football team has obtained so far.
+### 9. Create a function that takes the number of wins, draws and losses and calculates the number of points a football team has obtained so far.
 
 - wins get 3 points
 - draws get 1 point
