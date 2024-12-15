@@ -90,25 +90,22 @@ var suffix = ["th", "st", "nd", "rd"];
 4.  Get name, legs, color, age, and bark value from the dog object.
 5.  Set new properties for the dog object: breed, getDogInfo.
 
-### 25. Create an object literal `personAccount` that contains:
-
-- Properties: `firstName`, `lastName`, `incomes`, `expenses`.
-- Methods: `totalIncome`, `totalExpense`, `accountInfo`, `addIncome`, `addExpense`, `accountBalance`.
+### Create an object literal called personAccount. It has firstName, lastName, incomes, expenses properties and it has totalIncome, totalExpense, accountInfo,addIncome,addExpense and accountBalance methods. Incomes is a set of incomes and its description and expenses is a set of incomes and its description.
 
 ### 26. Write a JavaScript function `tenMostFrequentWords` that returns the ten most frequent words from a user-provided string.
 
 ### 27. Write a JavaScript program that performs the following DOM manipulations:
 
 1.  Create an `index.html` file and put four `p` elements as above:
-    - Get the first paragraph using `document.querySelector(tagname)` and tag name.
-    - Get each of the paragraphs using `document.querySelector('#id')` and by their id.
-    - Get all the `p` elements as a `NodeList` using `document.querySelectorAll(tagname)` and by their tag name.
-    - Loop through the `NodeList` and get the text content of each paragraph.
-    - Set text content to the fourth paragraph: `Fourth Paragraph`.
-    - Set id and class attributes for all the paragraphs using different attribute setting methods.
-    - Change the style of each paragraph using JavaScript (e.g., color, background, border, font-size, font-family).
-    - Select all paragraphs and loop through each element. Set the first and third paragraph to green, and the second and fourth paragraph to red.
-    - Set text content, id, and class to each paragraph.
+2.  Get the first paragraph using `document.querySelector(tagname)` and tag name.
+3.  Get each of the paragraphs using `document.querySelector('#id')` and by their id.
+4.  Get all the `p` elements as a `NodeList` using `document.querySelectorAll(tagname)` and by their tag name.
+5.  Loop through the `NodeList` and get the text content of each paragraph.
+6.  Set text content to the fourth paragraph: `Fourth Paragraph`.
+7.  Set id and class attributes for all the paragraphs using different attribute setting methods.
+8.  Change the style of each paragraph using JavaScript (e.g., color, background, border, font-size, font-family).
+9.  Select all paragraphs and loop through each element. Set the first and third paragraph to green, and the second and fourth paragraph to red.
+10. Set text content, id, and class to each paragraph.
 
 ### 28. Write a JavaScript program that:
 
