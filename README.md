@@ -165,7 +165,3 @@ var suffix = ["th", "st", "nd", "rd"];
 - Email Validation: Ensure the email field is not empty and includes the "@" symbol.
 - Password Validation: Ensure the password field is not empty and is at least eight characters long with at least one digit, one uppercase character, one lowercase character, and one special character.
 - Course Selection Validation: Ensure a course has been selected from a dropdown list.
-
-```
-
-```
