@@ -4,5 +4,3 @@ function sortString(string) {
 }
 
 console.log(sortString("webmaster"));
-
-
