@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age Calculator</title>
+
+    <style>
+
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    form {
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+
+    input[type="date"] {
+        padding: 5px;
+        margin: 10px;
+        font-size: 16px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    #ageResult {
+        font-size: 20px;
+        font-weight: bold;
+    }
+</style>
+
+    </style>
+  </head>
+  <body>
+    <h1>Age Calculator</h1>
+    <form id="ageForm">
+      <label for="dob">Enter your birthdate:</label>
+      <input type="date" id="dob" name="dob" required />
+      <button type="submit">Calculate Age</button>
+    </form>
+
+    <p id="ageResult"></p>
+
+    <script src="question-19.js"></script>
+  </body>
+</html>
