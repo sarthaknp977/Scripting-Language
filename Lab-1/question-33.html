@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f4;
+      }
+
+      .calculator {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .display {
+        height: 70px;
+        font-size: 24px;
+        text-align: right;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        flex-grow: 1;
+      }
+
+      .clear-button {
+        padding: 10px 20px;
+
+        font-size: 18px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .clear-button:hover {
+        background-color: #ddd;
+      }
+
+      .clear-button:active {
+        background-color: #ccc;
+      }
+
+      .buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 10px;
+      }
+
+      .button {
+        padding: 20px;
+        font-size: 20px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .button:hover {
+        background-color: #ddd;
+      }
+
+      .button:active {
+        background-color: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // Create calculator container
+      const calculator = document.createElement("div");
+      calculator.classList.add("calculator");
+      document.body.appendChild(calculator);
+
+      // Create display container and display input field
+      const displayContainer = document.createElement("div");
+      displayContainer.classList.add("display-container");
+      calculator.appendChild(displayContainer);
+
+      const display = document.createElement("input");
+      display.type = "text";
+      display.classList.add("display");
+      display.disabled = true; // Make it read-only
+      displayContainer.appendChild(display);
+
+      // Create 'C' button on the right of the display
+      const clearButton = document.createElement("button");
+      clearButton.classList.add("clear-button");
+      clearButton.classList.add("button");
+      clearButton.innerText = "C";
+      clearButton.addEventListener("click", clearDisplay);
+      displayContainer.appendChild(clearButton);
+
+      // Define the button labels and their functionality
+      const buttons = [
+        ["1", "2", "3", "/"],
+        ["4", "5", "6", "*"],
+        ["7", "8", "9", "-"],
+        ["0", ".", "=", "+"],
+      ];
+
+      // Create buttons dynamically
+      const buttonsContainer = document.createElement("div");
+      buttonsContainer.classList.add("buttons");
+      calculator.appendChild(buttonsContainer);
+
+      buttons.forEach((row) => {
+        row.forEach((buttonLabel) => {
+          const button = document.createElement("button");
+          button.classList.add("button");
+          button.innerText = buttonLabel;
+
+          // Add click event listener
+          button.addEventListener("click", () =>
+            handleButtonClick(buttonLabel)
+          );
+
+          buttonsContainer.appendChild(button);
+        });
+      });
+
+      // Handle button click
+      function handleButtonClick(label) {
+        if (label === "=") {
+          // Evaluate the expression
+          try {
+            display.value = eval(display.value);
+          } catch (e) {
+            display.value = "Error";
+          }
+        } else {
+          // Append the clicked value to the display
+          display.value += label;
+        }
+      }
+
+      // Clear the display
+      function clearDisplay() {
+        display.value = "";
+      }
+    </script>
+  </body>
+</html>
