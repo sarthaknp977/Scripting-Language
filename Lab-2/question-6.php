@@ -3,7 +3,7 @@
 <?php
 function yearsToDays($year)
 {
-  return $year * 365;
+  return ceil($year * 365);
 }
 
 echo yearsToDays(1.5);
