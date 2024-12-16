@@ -10,3 +10,4 @@ function strLength($str)
 }
 
 echo strLength('Hello, World!');
+

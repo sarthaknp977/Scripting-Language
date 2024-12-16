@@ -6,7 +6,7 @@ function compareStrings($str1, $str2)
 
   return strlen($str1) == strlen($str2) ? "True" : "False";
 }
-// echo "hi";
 
 echo compareStrings("hi", "no");
+echo compareStrings("h", "no");
 ?>

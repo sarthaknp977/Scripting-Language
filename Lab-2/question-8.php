@@ -1,6 +1,14 @@
+<!-- 
+A farmer is asking you to tell him how many legs can be counted among all his animals.
+The farmer breeds three species:
+chickens = 2 legs
+cows = 4 legs
+pigs = 4 legs
+Write PHP program to calculate total number of legs of all the animals asking input from
+user using form. -->
+
 <?php
-function countLegs()
-{
+
 
   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $noOfChicken = trim($_POST['chicken']);
@@ -15,7 +23,7 @@ function countLegs()
       echo "<h2>Total number of legs: $totalLegs</h2>";
     }
   }
-}
+
 ?>
 <style>
   body {
@@ -53,10 +61,5 @@ function countLegs()
   <button type="submit">Calculate Legs</button>
 </form>
 
-<?php
-countLegs();
-?>
 
-</body>
 
-</html>

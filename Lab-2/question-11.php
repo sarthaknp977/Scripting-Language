@@ -8,4 +8,5 @@ function isDivisibleBy5($value)
 }
 
 echo isDivisibleBy5(11);
+echo isDivisibleBy5(110);
 ?>

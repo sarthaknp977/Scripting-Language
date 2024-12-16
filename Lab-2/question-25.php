@@ -20,9 +20,6 @@ $info = [
 ?>
 
 
-
-
-
 <style>
   table {
     width: 50%;

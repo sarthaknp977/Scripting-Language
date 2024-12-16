@@ -11,22 +11,24 @@ NePAL
 NPL
 BCA
 BacheLOR
- --><?php
-    function capitalizeLast3Letter($string)
-    {
+ -->
 
-      if (strlen($string) >= 3) {
-        $lastThree = strtoupper(substr($string, -3));
-        $rest = substr($string, 0, -3);
-        return $rest . $lastThree;
-      }
+<?php
+function capitalizeLast3Letter($string)
+{
 
-      return strtoupper($string);
-    }
+  if (strlen($string) >= 3) {
+    $lastThree = strtoupper(substr($string, -3));
+    $rest = substr($string, 0, -3);
+    return $rest . $lastThree;
+  }
 
-    echo capitalizeLast3Letter("hii"); // Outputs: hiI
+  return strtoupper($string);
+}
 
-    echo capitalizeLast3Letter("hello"); // Outputs: helLO
+echo capitalizeLast3Letter("hii");
 
-    echo capitalizeLast3Letter("hi"); // Outputs: HI
-    ?>
+echo capitalizeLast3Letter("hello");
+
+echo capitalizeLast3Letter("hi");
+?>

@@ -5,11 +5,11 @@
 function return_index($array, $string)
 {
 
-  return "position : " . array_search($string, $array) + 1;
+  return "index : " . array_search($string, $array) ;
 }
 
 $array = ['apple', 'banana', 'cherry', 'date'];
-$string = 'banana';
+$string = 'apple';
 
 
 echo return_index($array, $string);
