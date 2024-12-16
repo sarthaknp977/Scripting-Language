@@ -4,9 +4,9 @@ b. File size less than 1 MB -->
 
 <?php
 
-define('MAX_FILE_SIZE', 1 * 1024 * 1024); 
+define('MAX_FILE_SIZE', 1 * 1024 * 1024);
 
-$allowedFileTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+$allowedFileTypes = ['application/pdf', 'application/msword'];
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (isset($_FILES['cv']) && $_FILES['cv']['error'] === UPLOAD_ERR_OK) {
@@ -15,7 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $fileSize = $_FILES['cv']['size'];
         $fileType = $_FILES['cv']['type'];
 
-        // Check file size
         if ($fileSize > MAX_FILE_SIZE) {
             echo "Error: File size exceeds 1 MB limit.";
         } elseif (!in_array($fileType, $allowedFileTypes)) {
@@ -38,19 +37,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload CV</title>
-</head>
-<body>
     <h1>Upload Your CV</h1>
     <form action="upload_cv.php" method="post" enctype="multipart/form-data">
         <label for="cv">Choose a CV (PDF or DOCX, Max 1MB):</label>
         <input type="file" name="cv" id="cv" required>
         <button type="submit">Upload CV</button>
     </form>
-</body>
-</html>
