@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My jQuery Project</title>
+    <style>
+      #content {
+        width: 200px;
+        height: 200px;
+        background-color: lightblue;
+        margin: 20px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello, World!</h1>
+
+    <!-- Create a target element to apply jQuery effects -->
+    <div id="content">This is a content box</div>
+
+    <!-- Buttons to trigger jQuery effects -->
+    <button id="hideBtn">Hide</button>
+    <button id="showBtn">Show</button>
+    <button id="toggleBtn">Toggle</button>
+
+    <button id="fadeInBtn">Fade In</button>
+    <button id="fadeOutBtn">Fade Out</button>
+    <button id="fadeToggleBtn">Fade Toggle</button>
+
+    <button id="slideUpBtn">Slide Up</button>
+    <button id="slideDownBtn">Slide Down</button>
+    <button id="slideToggleBtn">Slide Toggle</button>
+
+    <button id="animateBtn">Animate</button>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+    <script>
+      $("#hideBtn").click(function () {
+        $("#content").hide();
+      });
+
+      $("#showBtn").click(function () {
+        $("#content").show();
+      });
+
+      $("#toggleBtn").click(function () {
+        $("#content").toggle();
+      });
+
+      $("#fadeInBtn").click(function () {
+        $("#content").fadeIn(1000);
+      });
+
+      $("#fadeOutBtn").click(function () {
+        $("#content").fadeOut(1000);
+      });
+
+      $("#fadeToggleBtn").click(function () {
+        $("#content").fadeToggle(1000);
+      });
+
+      $("#slideUpBtn").click(function () {
+        $("#content").slideUp(1000);
+      });
+
+      $("#slideDownBtn").click(function () {
+        $("#content").slideDown(1000);
+      });
+
+      $("#slideToggleBtn").click(function () {
+        $("#content").slideToggle(1000);
+      });
+
+      $("#animateBtn").click(function () {
+        $("#content").animate({ opacity: 0.5 }, 1000);
+      });
+    </script>
+  </body>
+</html>
