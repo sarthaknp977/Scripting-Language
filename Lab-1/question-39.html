@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Registration Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      form {
+        max-width: 500px;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+      }
+      label {
+        display: inline-block;
+        margin: 10px 0 5px;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+      input[type="url"],
+      input[type="tel"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      input[type="radio"] {
+        margin-right: 5px;
+      }
+      button {
+        padding: 10px 15px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      .error {
+        color: red;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>User Registration Form</h1>
+
+    <form id="registrationForm">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        placeholder="Enter your full name"
+      />
+      <div id="nameError" class="error"></div>
+
+      <label for="address">Address</label>
+      <textarea
+        id="address"
+        name="address"
+        rows="4"
+        required
+        placeholder="Enter your address"
+      ></textarea>
+      <div id="addressError" class="error"></div>
+
+      <label for="username">Username</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        required
+        placeholder="Choose a username"
+      />
+      <div id="usernameError" class="error"></div>
+
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        placeholder="Enter your email"
+      />
+      <div id="emailError" class="error"></div>
+
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        required
+        placeholder="Create a password"
+      />
+      <div id="passwordError" class="error"></div>
+
+      <label for="website">Website</label>
+      <input
+        type="url"
+        id="website"
+        name="website"
+        placeholder="Enter your website (optional)"
+      />
+
+      <label for="phone">Phone</label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        required
+        placeholder="Enter your phone number"
+      />
+      <div id="phoneError" class="error"></div>
+
+      <label>Gender</label>
+      <div>
+        <label for="genderMale">Male</label>
+        <input type="radio" id="genderMale" name="gender" value="male" />
+        <label for="genderFemale">Female</label>
+        <input type="radio" id="genderFemale" name="gender" value="female" />
+        <label for="genderOther">Other</label>
+        <input type="radio" id="genderOther" name="gender" value="other" />
+      </div>
+      <div id="genderError" class="error"></div>
+
+      <label for="course">Course</label>
+      <select id="course" name="course" required>
+        <option value="">Select a course</option>
+        <option value="webDevelopment">Web Development</option>
+        <option value="dataScience">Data Science</option>
+        <option value="machineLearning">Machine Learning</option>
+        <option value="graphicDesign">Graphic Design</option>
+      </select>
+      <div id="courseError" class="error"></div>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+      document
+        .getElementById("registrationForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          let isValid = true;
+          clearErrors();
+
+          // - Name Validation: Ensure the name field is not empty and does not contain any numbers.
+          const name = document.getElementById("name").value;
+          if (!name || /\d/.test(name)) {
+            isValid = false;
+            document.getElementById("nameError").textContent =
+              "Name cannot be empty or contain numbers.";
+          }
+
+          // - Username Validation: Ensure the username field is not empty and does not contain any spaces or special characters except underscore (`_`).
+
+          const username = document.getElementById("username").value;
+          if (
+            !username ||
+            /\s/.test(username) ||
+            /[^a-zA-Z0-9_]/.test(username)
+          ) {
+            isValid = false;
+            document.getElementById("usernameError").textContent =
+              "Username cannot contain spaces or special characters except '_'.";
+          }
+
+          // - Phone Validation: Ensure the phone field is not empty, contains only numbers, and starts with `[98/97/96]`.
+          const phone = document.getElementById("phone").value;
+          const phonePattern = /^(98|97|96)\d{8}$/;
+          if (!phone || !phonePattern.test(phone)) {
+            isValid = false;
+            document.getElementById("phoneError").textContent =
+              "Phone must start with 98, 97, or 96 and contain only numbers.";
+          }
+
+          // - Gender Validation: Ensure the gender field is not empty.
+
+          const gender = document.querySelector('input[name="gender"]:checked');
+          if (!gender) {
+            isValid = false;
+            document.getElementById("genderError").textContent =
+              "Please select a gender.";
+          }
+
+          // - Address Validation: Ensure the address field is not empty.
+
+          const address = document.getElementById("address").value;
+          if (!address) {
+            isValid = false;
+            document.getElementById("addressError").textContent =
+              "Address cannot be empty.";
+          }
+
+          // - Email Validation: Ensure the email field is not empty and includes the "@" symbol.
+
+          const email = document.getElementById("email").value;
+          if (!email || !email.includes("@")) {
+            isValid = false;
+            document.getElementById("emailError").textContent =
+              "Email must contain '@'.";
+          }
+
+          // - Password Validation: Ensure the password field is not empty and is at least eight characters long with at least one digit, one uppercase character, one lowercase character, and one special character.
+
+          const password = document.getElementById("password").value;
+          const passwordPattern =
+            /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+          if (!password || !passwordPattern.test(password)) {
+            isValid = false;
+            console.log(password);
+            document.getElementById("passwordError").textContent =
+              "Password must be at least 8 characters long and contain at least one digit, one uppercase letter, one lowercase letter, and one special character.";
+          }
+
+          // - Course Selection Validation: Ensure a course has been selected from a dropdown list.
+
+          const course = document.getElementById("course").value;
+          if (!course) {
+            isValid = false;
+            document.getElementById("courseError").textContent =
+              "Please select a course.";
+          }
+
+          // If form is valid, submit it
+          if (isValid) {
+            alert("Form submitted successfully!");
+          }
+        });
+
+      function clearErrors() {
+        const errors = document.querySelectorAll(".error");
+        errors.forEach((error) => (error.textContent = ""));
+      }
+    </script>
+  </body>
+</html>

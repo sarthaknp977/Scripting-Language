@@ -1,7 +1,7 @@
 const addBtn = document.querySelector(".add");
 const subBtn = document.querySelector(".sub");
 
-const resetBtn = document.querySelector("button:nth-of-type(3)");
+const resetBtn = document.querySelector(".reset");
 const countDisplay = document.querySelector("span");
 
 let val = parseInt(countDisplay.innerText);

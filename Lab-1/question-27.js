@@ -41,4 +41,17 @@ allP[3].style.fontSize = "34px";
 
 // h. Select all paragraphs and loop through each elements and give the first and third paragraph a color of green, and the second and the fourth paragraph a red color
 
+allP.forEach(function (elem, index) {
+  if (index % 2 == 0) {
+    elem.style.background = "green";
+  } else {
+    elem.style.background = "red";
+  }
+});
+
 // i.Set text content, id and class to each paragraph
+allP.forEach((p, i) => {
+  p.textContent = `New Text for paragraph-${i + 1}`;
+  p.id = `newIdOfParagraph-${i + 1}`;
+  p.className = `newClassName-${i + 1}`;
+});

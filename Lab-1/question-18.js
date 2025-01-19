@@ -33,4 +33,4 @@ const secondDay = new Date(date.getFullYear(), month2, day2);
 console.log(firstDay, "->firstDay  ", secondDay, "->SecondDay");
 const diff = firstDay - secondDay;
 
-console.log(Math.ceil(diff / (1000 * 3600 * 24)));
+console.log(Math.abs(Math.ceil(diff / (1000 * 3600 * 24))));

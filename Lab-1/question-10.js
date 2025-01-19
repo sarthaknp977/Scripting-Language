@@ -1,15 +1,15 @@
 // 10. Write a JavaScript program that accept n number of integers into array and display the larger.
 
-function findLargestNumber(numbers) {
+function findNumber(numbers) {
   let largest = numbers[0];
+  let smallest = numbers[0];
 
   for (let i = 1; i < numbers.length; i++) {
-    if (numbers[i] > largest) {
-      largest = numbers[i];
-    }
+    largest = Math.max(numbers[i], largest);
+    smallest = Math.min(numbers[i], largest);
   }
 
-  return largest;
+  return { largest, smallest };
 }
 
 function getInputAndDisplayLargest() {
@@ -23,8 +23,11 @@ function getInputAndDisplayLargest() {
     return;
   }
 
-  let largest = findLargestNumber(numbers);
+  let { largest } = findNumber(numbers);
   console.log("The largest number is:", largest);
+
+  let { smallest } = findNumber(numbers);
+  console.log("The largest number is:", smallest);
 }
 
 getInputAndDisplayLargest();

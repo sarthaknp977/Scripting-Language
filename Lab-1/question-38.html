@@ -1,0 +1,63 @@
+<button id="changeBgBtn">Change Background Color</button>
+<button id="changeParaBgBtn">Change Paragraph Background</button>
+<button id="hideParaBtn">Hide Paragraph</button>
+<button id="showParaBtn">Show Paragraph</button>
+<button id="incFontSizeBtn">Increase Font Size</button>
+<button id="decFontSizeBtn">Decrease Font Size</button>
+<button id="resetFontBtn">Reset Font Size</button>
+<button id="changeTextColorBtn">Change Text Color</button>
+
+<p>
+  This is a sample paragraph. You can modify its properties using the buttons
+  above.
+</p>
+
+<script>
+  const bgButton = document.querySelector("#changeBgBtn");
+  bgButton.addEventListener("click", function (e) {
+    document.body.style.backgroundColor = "red";
+  });
+
+  const paraButton = document.querySelector("#changeParaBgBtn");
+  paraButton.addEventListener("click", function (e) {
+    document.querySelector("p").style.backgroundColor = "orange";
+  });
+
+  const hidePara = document.querySelector("#hideParaBtn");
+  hidePara.addEventListener("click", function (e) {
+    document.querySelector("p").style.display = "none";
+  });
+
+  const showPara = document.querySelector("#showParaBtn");
+  showPara.addEventListener("click", function (e) {
+    document.querySelector("p").style.display = "block";
+  });
+
+  const incFontSize = document.querySelector("#incFontSizeBtn");
+  incFontSize.addEventListener("click", function (e) {
+    const currentSize = parseInt(
+      window.getComputedStyle(document.querySelector("p")).fontSize
+    );
+    console.log(currentSize);
+    document.querySelector("p").style.fontSize = currentSize + 2 + "px";
+  });
+
+  const decFontSize = document.querySelector("#decFontSizeBtn");
+  decFontSize.addEventListener("click", function (e) {
+    const currentSize = parseInt(
+      window.getComputedStyle(document.querySelector("p")).fontSize
+    );
+    console.log(currentSize);
+    document.querySelector("p").style.fontSize = currentSize - 2 + "px";
+  });
+
+  const resetFontBtn = document.querySelector("#resetFontBtn");
+  resetFontBtn.addEventListener("click", function (e) {
+    document.querySelector("p").style.fontSize = "12px";
+  });
+
+  const changeTextColor = document.querySelector("#changeTextColorBtn");
+  changeTextColor.addEventListener("click", function (e) {
+    document.querySelector("p").style.color = "blue";
+  });
+</script>

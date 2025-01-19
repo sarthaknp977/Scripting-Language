@@ -10,7 +10,7 @@
 // Sample data
 
 const color = ["Blue", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow"];
-const order = ["st", "nd", "rd", "th", "th", "th", "th"];
+const order = ["st", "nd", "rd"];
 
 for (let i = 0; i < color.length; i++) {
   let choice = i + 1 + `${i < 3 ? order[i] : "th"}`;
