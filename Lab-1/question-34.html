@@ -46,6 +46,9 @@
 
       .hour-hand {
         height: 6px;
+        width: 30%;
+        top: 50%;
+        left: 20%;
         background: #333;
       }
 
@@ -155,7 +158,8 @@
         const seconds = now.getSeconds();
         const minutes = now.getMinutes();
         const hours = now.getHours();
-
+        // const hours = 10;
+        console.log(hours);
         // Calculate the rotation for each hand
         const secondsDegrees = (seconds / 60) * 360 + 90; // Adjusted for proper position
         secondHand.style.transform = `rotate(${secondsDegrees}deg)`;

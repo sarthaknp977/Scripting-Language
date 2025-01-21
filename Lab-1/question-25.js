@@ -11,15 +11,15 @@ let personAccount = {
   lastName: "Thapa",
   incomes: [
     {
-      income: 10,
+      income: 310,
       description: "From a",
     },
     {
-      income: 11,
+      income: 111,
       description: "From b",
     },
     {
-      income: 12,
+      income: 121,
       description: "From c",
     },
   ],

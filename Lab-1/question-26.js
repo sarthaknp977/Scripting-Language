@@ -16,12 +16,12 @@ function tenMostFrequentWords(inp) {
     }
   });
   wordCount = Object.entries(wordCount);
-  console.log(wordCount);
+
   wordCount.sort((a, b) => b[1] - a[1]);
-  console.log(wordCount);
+  console.log(wordCount.slice(0, 10));
 }
 
 let userInput =
-  "The accountInfo method now returns both total income and total expenses in a more readable format.";
+  "This is a test input to test if the function returns the words as expected is is this is a test input to test if the function returns";
 
 tenMostFrequentWords(userInput);
